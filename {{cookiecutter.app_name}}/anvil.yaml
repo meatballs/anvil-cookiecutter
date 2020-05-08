@@ -1,0 +1,9 @@
+services: []
+startup: {type: module, module: startup}
+package_name: {{cookiecutter.package_name}}
+allow_embedding: false
+name: {{cookiecutter.app_name}}
+runtime_options: {version: 2, client_version: '3', server_version: python3-sandbox}
+metadata: {}
+native_deps: {head_html: ''}
+db_schema: []
