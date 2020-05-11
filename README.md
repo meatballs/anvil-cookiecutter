@@ -1,6 +1,6 @@
 # Anvil Cookiecutter Template
 
-A [cookiecutter](https://github.com/cookiecutter/cookiecutter) template to create a new [Anvil](https://anvil.works] application on your local machine.
+A [cookiecutter](https://github.com/cookiecutter/cookiecutter) template to create a new [Anvil](https://anvil.works) application on your local machine.
 
 ## Pre-requisites
 
