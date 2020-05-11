@@ -37,7 +37,35 @@ Other options are described fully in the cookiecutter docs.
 You can run your app locally using Anvil's app server or you can push it to your Anvil account and run it on their cloud service.
 
 ### Running Locally
-TODO
+
+ * Install the anvil app server by following the 'Set up your environment' section of the [Getting Started Guide](https://github.com/anvil-works/anvil-runtime/blob/master/doc/getting-started.md)
+ 
+ * Start your app:
+ ```
+ anvil-app-server --app <path to your new app folder>
+ ```
+
+ * Open your favourite browser and navigate to `http://localhost:3030`
 
 ### Running on anvil.works
-TODO
+
+To push your app to your anvil account, you will need to have git installed on your local machine.
+
+  * Create a new app within your Anvil account
+  * From its 'Settings' menu, open the 'Version History...' option and click the 'Clone with Git' at the bottom
+  * Copy the url for your app to your clipboard (that's everything after `git clone` in the command that's displayed).
+  * Cancel the Git Access window and close your app
+  * In your terminal, initialise a git repository in your local app folder and add the app at anvil.works as a remote:
+  ```
+  cd <path to your new local app>
+  git init .
+  git remote add anvil <paste the url you copied here>
+  ```
+  * Commit the files in your local app to git and push them to anvil.works:
+  ```
+  git add -A
+  git commit -m "Initial commit"
+  git push -f -u anvil master
+  ```
+  NOTE - this last step uses a 'force' push to overwrite the history on your app at anvil.works. Whilst this is fine for a new app as described here, be careful about doing this to an existing app unless you know what you're doing.
+  
