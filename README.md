@@ -6,6 +6,11 @@ A [cookiecutter](https://github.com/cookiecutter/cookiecutter) template to creat
 
 * Dynamic menu construction using the [navigation](https://github.com/meatballs/anvil-navigation) module
 
+#### Coming Soon
+
+* Optional role based authorisation
+* Optional dynamic serialisation of data tables content
+
 ## Pre-requisites
 
 * You will need to have cookiecutter installed on your machine. Follow the [cookiecutter installation instructions](https://cookiecutter.readthedocs.io/en/1.7.2/installation.html)
