@@ -2,6 +2,10 @@
 
 A [cookiecutter](https://github.com/cookiecutter/cookiecutter) template to create a new [Anvil](https://anvil.works) application on your local machine.
 
+## Features
+
+* Dynamic menu construction using the [navigation](https://github.com/meatballs/anvil-navigation) module
+
 ## Pre-requisites
 
 * You will need to have cookiecutter installed on your machine. Follow the [cookiecutter installation instructions](https://cookiecutter.readthedocs.io/en/1.7.2/installation.html)
