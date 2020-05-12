@@ -24,8 +24,7 @@ cookiecutter gh:meatballs/anvil-coookiecutter
 ```
 
 You will be asked for the name of your new app and the name of the python package for that app 
-(which will default to 'MyApp' and 'my_app' respectively) and your app will then be created in your current
-working directory.
+(which will default to 'MyApp' and 'my_app' respectively). You'll also be aksed whether or not you want to include the optional components and then your app will then be created in your current working directory.
 
 You can specify a different destination folder for your app by passing the `-o` option to  cookiecutter:
 ```
