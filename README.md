@@ -5,6 +5,7 @@ A [cookiecutter](https://github.com/cookiecutter/cookiecutter) template to creat
 ## Features
 
 * Dynamic menu construction using the [navigation](https://github.com/meatballs/anvil-navigation) module
+* Optional inclusion of [hash routing](https://github.com/s-cork/HashRouting)
 
 #### Coming Soon
 

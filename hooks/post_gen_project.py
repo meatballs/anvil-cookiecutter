@@ -23,7 +23,26 @@ from typing import List, Union
 from urllib.request import urlopen
 
 github_url = "https://api.github.com/repos"
-navigation_url = f"{github_url}/meatballs/anvil-navigation"
+
+dependencies = [
+    {
+        "definition": {
+            "repo_url": f"{github_url}/meatballs/anvil-navigation",
+            "files": [Path("client_code", "navigation.py")],
+        },
+        "include": "yes",
+    },
+    {
+        "definition": {
+            "repo_url": f"{github_url}/s-cork/HashRouting",
+            "files": [
+                Path("client_code", "routing.py"),
+                Path("client_code", "_logging.py"),
+            ],
+        },
+        "include": "{{cookiecutter.with_hash_routing}}",
+    },
+]
 
 
 def github_latest_tarball_url(repo_url: str) -> str:
@@ -59,7 +78,7 @@ def extract_file(tarball: tarfile.TarFile, path: Path) -> None:
         file.write(buffer.read())
 
 
-def inject_dependencies(repo_url: str, files: Union[List[Path], Path]) -> None:
+def inject_dependency(repo_url: str, files: Union[List[Path], Path]) -> None:
     """Fetch the latest source code and extract files to the project folder"""
     if isinstance(files, Path):
         files = [files]
@@ -70,4 +89,9 @@ def inject_dependencies(repo_url: str, files: Union[List[Path], Path]) -> None:
 
 
 if __name__ == "__main__":
-    inject_dependencies(navigation_url, Path("client_code", "navigation.py"))
+    for dependency in [
+        dependency["definition"]
+        for dependency in dependencies
+        if dependency["include"] == "yes"
+    ]:
+        inject_dependency(**dependency)
