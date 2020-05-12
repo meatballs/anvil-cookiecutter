@@ -30,7 +30,7 @@ You can specify a different destination folder for your app by passing the `-o` 
 ```
 cookiecutter gh:meatballs/anvil-cookiecutter -o <destination folder>
 ```
-Other options are described fully in the cookiecutter docs.
+Other options are described fully in the [usage section of the cookiecutter docs](https://cookiecutter.readthedocs.io/en/1.7.2/usage.html#generate-your-project).
 
 ## Running Your App
 
