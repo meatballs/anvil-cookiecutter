@@ -104,6 +104,7 @@ if __name__ == "__main__":
     ]:
         inject_dependency(**dependency)
 
+    Path("server_code", "temp.txt").unlink()
     if "{{cookiecutter.with_authorisation}}" == "no":
         shutil.rmtree(Path("client_code", "Login"))
 
