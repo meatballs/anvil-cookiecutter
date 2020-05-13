@@ -1,6 +1,13 @@
 from anvil import open_form
 
 from . import content_forms
-from .Main import Main
+{% if cookiecutter.with_authorisation == "yes" %}
+import anvil.users
 
-open_form(Main())
+if anvil.users.get_user():
+    open_form("Main")
+else:
+    open_form("Login")
+{% else %}
+open_form("Main")
+{% endif %}

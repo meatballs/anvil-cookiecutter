@@ -1,4 +1,15 @@
+{% if cookiecutter.with_authorisation == "yes" %}
+services:
+- source: /runtime/services/tables.yml
+  client_config: {}
+  server_config: {auto_create_missing_columns: false}
+- source: /runtime/services/anvil/users.yml
+  client_config: {allow_signup: false, enable_automatically: true, use_email: true,
+    confirm_email: false, allow_remember_me: true, remember_me_days: 30}
+  server_config: {user_table: users}
+{% else %}
 services: []
+{% endif %}
 startup: {type: module, module: startup}
 package_name: {{cookiecutter.package_name}}
 allow_embedding: false

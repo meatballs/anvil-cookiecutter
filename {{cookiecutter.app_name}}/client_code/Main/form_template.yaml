@@ -12,7 +12,19 @@ components:
   properties: {}
   name: navbar_links
   layout_properties: {slot: nav-right}
+  {% if cookiecutter.with_authorisation == "yes" %}
+  components:
+  - type: Link
+    properties: {role: null, align: left, tooltip: '', border: '', foreground: '',
+      visible: true, text: Logout, font_size: null, wrap_on: mobile, font: '', col_spacing: medium,
+      spacing_above: small, icon_align: left, col_widths: '', spacing_below: small,
+      italic: false, background: '', bold: false, underline: false, icon: ''}
+    name: logout_link
+    layout_properties: {}
+    event_bindings: {click: logout_link_click}
+  {% else %}
   components: []
+  {% endif %}
 - type: ColumnPanel
   properties: {col_widths: '{}'}
   name: menu_column_panel

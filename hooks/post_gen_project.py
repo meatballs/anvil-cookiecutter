@@ -17,6 +17,7 @@
 # This program is published at https://github.com/meatballs/anvil-cookiecutter
 import io
 import json
+import shutil
 import tarfile
 from pathlib import Path
 from typing import List, Union
@@ -41,6 +42,13 @@ dependencies = [
             ],
         },
         "include": "{{cookiecutter.with_hash_routing}}",
+    },
+    {
+        "definition": {
+            "repo_url": f"{github_url}/meatballs/anvil-authorisation",
+            "files": [Path("server_code", "authorisation.py")],
+        },
+        "include": "{{cookiecutter.with_authorisation}}",
     },
 ]
 
@@ -95,3 +103,7 @@ if __name__ == "__main__":
         if dependency["include"] == "yes"
     ]:
         inject_dependency(**dependency)
+
+    if "{{cookiecutter.with_authorisation}}" == "no":
+        shutil.rmtree(Path("client_code", "Login"))
+

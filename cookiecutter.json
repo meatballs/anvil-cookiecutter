@@ -1,5 +1,6 @@
 {
   "app_name": "MyApp",
   "package_name": "my_app",
-  "with_hash_routing": ["yes", "no"]
+  "with_hash_routing": ["yes", "no"],
+  "with_authorisation": ["yes", "no"]
 }
