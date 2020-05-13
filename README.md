@@ -54,19 +54,21 @@ To push your app to your anvil account, you will need to have git installed on y
 
   * Create a new app within your Anvil account
   * From its 'Settings' menu, open the 'Version History...' option and click the 'Clone with Git' at the bottom
-  * Copy the url for your app to your clipboard (that's everything after `git clone` in the command that's displayed).
+  * Copy the url for your app to your clipboard (that's everything between `git clone` and the app name in the command that's displayed).
   * Cancel the Git Access window and close your app
   * In your terminal, initialise a git repository in your local app folder and add the app at anvil.works as a remote:
   ```
   cd <path to your new local app>
   git init .
   git remote add anvil <paste the url you copied here>
+  git fetch anvil
   ```
   * Commit the files in your local app to git and push them to anvil.works:
   ```
   git add -A
   git commit -m "Initial commit"
-  git push -f -u anvil master
+  git branch -u anvil/master
+  git push -f
   ```
   NOTE - this last step uses a 'force' push to overwrite the history on your app at anvil.works. Whilst this is fine for a new app as described here, be careful about doing this to an existing app unless you know what you're doing.
   
