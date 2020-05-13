@@ -6,11 +6,7 @@ A [cookiecutter](https://github.com/cookiecutter/cookiecutter) template to creat
 
 * Dynamic menu construction using the [navigation](https://github.com/meatballs/anvil-navigation) module
 * Optional inclusion of [hash routing](https://github.com/s-cork/HashRouting)
-
-#### Coming Soon
-
-* Optional role based authorisation
-* Optional dynamic serialisation of data tables content
+* Optional role based authorisation using the [authorisation](https://github.com/meatballs/anvil-authorisation) module
 
 ## Pre-requisites
 
