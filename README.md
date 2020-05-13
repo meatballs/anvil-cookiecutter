@@ -28,22 +28,7 @@ cookiecutter gh:meatballs/anvil-cookiecutter -o <destination folder>
 ```
 Other options (e.g. using ssh) are described fully in the [usage section of the cookiecutter docs](https://cookiecutter.readthedocs.io/en/1.7.2/usage.html#generate-your-project).
 
-## Running Your App
-
-You can run your app locally using Anvil's app server or you can push it to your Anvil account and run it on their cloud service.
-
-### Running Locally
-
- * Install the anvil app server by following the 'Set up your environment' section of the [Getting Started Guide](https://github.com/anvil-works/anvil-runtime/blob/master/doc/getting-started.md)
- 
- * Start your app:
- ```
- anvil-app-server --app <path to your new app folder>
- ```
-
- * Open your favourite browser and navigate to `http://localhost:3030`
-
-### Running on anvil.works
+## Pushing your app to anvil.works
 
 To push your app to your anvil account, you will need to have git installed on your local machine.
 
@@ -65,5 +50,6 @@ To push your app to your anvil account, you will need to have git installed on y
   git branch -u anvil/master
   git push -f
   ```
-  NOTE - this last step uses a 'force' push to overwrite the history on your app at anvil.works. Whilst this is fine for a new app as described here, be careful about doing this to an existing app unless you know what you're doing.
-  
+  NOTES:
+  * This last step uses a 'force' push to overwrite the history on your app at anvil.works. Whilst this is fine for a new app as described here, be careful about doing this to an existing app unless you know what you're doing.
+  * If you included the authorisation module, you will need to add tables to your new app. Full instructions are in the module's README.
