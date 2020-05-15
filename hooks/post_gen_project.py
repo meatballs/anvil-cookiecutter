@@ -50,6 +50,13 @@ dependencies = [
         },
         "include": "{{cookiecutter.with_authorisation}}",
     },
+    {
+        "definition": {
+            "repo_url": f"{github_url}/meatballs/anvil-events",
+            "files": [Path("client_code", "events.py")],
+        },
+        "include": "{{cookiecutter.with_events}}",
+    },
 ]
 
 
